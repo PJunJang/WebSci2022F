@@ -17,5 +17,5 @@ Description : In this lab, I built a web of news ticker which vertically ticks v
 8.  ticker.js : </br>
 </t> 1) As mentioned, easyTicker plugin provides very simple usage of creating ticker functions. </br>
 </t> 2) In order to make them shift every three second, I set interval as 3000, and made it move up.</br>
-9. tickerstyle.css : I used simple css styles,trying to make some aesthethic effects throughout the page.
-
+9. tickerstyle.css : I used simple css styles,trying to make some aesthethic effects throughout the page.</br>
+10. Overall, since I have never done such projects creating news ticker app, I got stuck at here and there during the lab. Even fetching data from json to html was a challenging moment for me which made me spend much time for searching up for resources. In later labs, it would be great if we get more specific guide on each lab with brief sample cases with codes so that we could try to work off on it. 
