@@ -1,0 +1,25 @@
+body{
+    background-image: url("./istockphoto-1287901429-170667a.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat:repeat-y;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.589);
+    color: whitesmoke;
+}
+#title{
+    font-size: large;
+    color : whitesmoke;
+    font-size: 40px;
+}
+h1{
+    font-family: 'Righteous',sans-serif;
+    color: whitesmoke;
+}
+h2{
+    font-family: 'Righteous',sans-serif;
+    color: whitesmoke;
+}
+#header{
+    font-size: large;
+}
