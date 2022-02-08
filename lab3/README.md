@@ -10,6 +10,10 @@ Maintaining the part that I fetched an openweathermap data, I also added an extr
 I would prefer being able to use google map api to have a map features, but since they are not provided at free rate, I had to use KakaoMap API.</br>
 The thing with KakaoMap is, since it is Korean firm provided, it only shows a map within Korean territory.</br>
 New Functionality added : Now it is able to mark on the map in order to get its geolocational data printed out right under the map.</br>
+ <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c1b98503698e272a279883cbaaa484ab"></script>
+        
+ 
 
 MY API : </br>
 the original version(for book search) : /src_book/api.js </br>

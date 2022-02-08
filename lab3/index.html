@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./source_weather/weather_style.css">
+    <title>WEBSCI LAB2-WEATHER APP</title>
+</head>
+
+
+<body>
+    <a href="./index_2.html"><h1>Link To the Book Search Engine</h1></a>
+    <div class="container">
+        <div class="current-info">
+            <div class="date-container">
+                <div class="time" id="time">
+                    <span id="am-pm"></span>
+                </div>
+                <div class="date" id="date">
+                    Fri,28 Jan
+                </div>
+                <div class="other" id="current-weather-items">
+
+                </div>
+            </div>
+            <div class="map-container">
+                <!-- script for google map api -->
+                <div id="map" style="width:400px;height:300px;"></div>
+                <p><em>Click on the map to get the point's geolocation!</em></p>
+                <div id="clickLatlng"></div>
+            </div>
+            <div class="place-container">
+                <div class="time-zone" id="time-zone"></div>
+                <div class="country" id="country"></div>
+            </div>
+        </div>
+    </div>
+    <div class="future-forecast">
+        <div class="today" id="current-temp">
+            <div class="other">
+
+            </div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day"></div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+
+            <div class="weather-forecast-item">
+                <div class="day">Wed</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Thur</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Fri</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sat</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sun</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">&#176; F</div>
+                <div class="temp">&#176; F</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c1b98503698e272a279883cbaaa484ab"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(37.5172, 127.0473),
+            level: 3
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var marker = new kakao.maps.Marker({
+            // 지도 중심좌표에 마커를 생성합니다 
+            position: map.getCenter()
+        });
+        // 지도에 마커를 표시합니다
+        marker.setMap(map);
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+
+            // 클릭한 위도, 경도 정보를 가져옵니다 
+            var latlng = mouseEvent.latLng;
+
+            // 마커 위치를 클릭한 위치로 옮깁니다
+            marker.setPosition(latlng);
+
+            var message = 'The clicked spots lat is ' + latlng.getLat() + ' , ';
+            message += 'long is ' + latlng.getLng() + '.';
+
+            var resultDiv = document.getElementById('clickLatlng');
+            resultDiv.innerHTML = message;
+
+        });
+
+    </script>
+    <!-- <script src="./server.js"></script> -->
+    <script src="./source_weather/weather_script.js"></script>
+</body>
+
+</html>
