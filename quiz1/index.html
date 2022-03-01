@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./server.js"></script>
+    <title>Document</title>
+</head>
+
+<body style="background-color: lightblue;">
+    <h1 style="text-align: center;">Quiz1</h1>
+    <div class="container" style="border-style:solid; border-color:blue; background-color:lightgrey" >
+        <form style="margin-top: 5%; margin-bottom:5%";" action="/wind" method="GET">
+            <input type="number" id="wind_zip" name="wind_zip" placeholder="ZIP CODE(GET)" />
+            <button type="submit" class="btn btn-primary" id="send">Is RPI windy?</button>
+        </form>
+
+        <form style="margin-top: 10%; margin-bottom:10%" action="/temperature" method="POST">
+            <input type="number" id="temp_zip" name="temp_zip" placeholder="ZIP CODE(POST)" />
+            <button type="submit" class="btn btn-primary" id="send">Temperature</button>
+        </form>
+    </div>
+</body>
+
+</html>
