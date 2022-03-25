@@ -1,10 +1,11 @@
 TITLE : <LAB5>
 Name  : Paul Jang
 
-Description: 
-    <pt.1> : In order to preload the database: Lab5-<WeatherData> collections<lab5Weather>,
-    I first created an array, which contains more than 100 US cities. I first tried to insert each city's weather data using a for loop which loops over the array, and makes a "request" call everytime. But since the for loop didn't wait until it makes a request call for the index of the city, I just decided to manually preload the data from the index of 0 to 99. Now in the db, there are 100 different US cities' weather data loaded.
-    <pt.2> :
+## Description: 
+#### <pt.1> : 
+    In order to preload the database: <br/>
+Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which contains more than 100 US cities.<br/> I first tried to insert  each city's weather data using a for loop which loops over the array, and makes a "request" call everytime.<br/> But since the for loop didn't wait until it makes a request call for the index of the  city,<br/> I just decided to manually preload the data from the index of 0 to 99.<br/> Now in the db,  there are 100 different US cities' weather data loaded.<br/>
+#### <pt.2> :
     Get : 
         1) For getting all the documents existing in the db collection, I created a form that operates an action to the endpoint("/db"). This call successfully runs a get function from the backend. 
             <how to run> 
@@ -29,7 +30,7 @@ Description:
     Delete : 
         Incomplete for now
     
-    <pt.3>: a new angular component
+#### <pt.3>: a new angular component
     For the newly created features of the web, I created new component named "database", which handles all the forms for passing action to the backend http calls().
     <buttons instructions> 
         - 1. Get all the documents in db collections! => retrieves and displays all the documents from the db colletion.
