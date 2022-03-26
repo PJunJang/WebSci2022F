@@ -5,6 +5,7 @@ Name  : Paul Jang
 #### <pt.1> : 
     In order to preload the database: <br/>
 Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which contains more than 100 US cities.<br/> I first tried to insert  each city's weather data using a for loop which loops over the array, and makes a "request" call everytime.<br/> But since the for loop didn't wait until it makes a request call for the index of the  city,<br/> I just decided to manually preload the data from the index of 0 to 99.<br/> Now in the db,  there are 100 different US cities' weather data loaded.<br/> I brought the city list from "https://gist.github.com/norcal82/42440bd06a67eb7d9616".
+    Resources that helped: https://www.w3schools.com/nodejs/nodejs_mongodb_insert.asp, 
 #### <pt.2> :
     Get : 
         1) For getting all the documents existing in the db collection, I created a form that operates an action to the endpoint("/db"). This call successfully runs a get function from the backend. 
@@ -14,6 +15,7 @@ Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which con
         2) For getting the document at the specified index, I created another get function in the "server.js" with the different endpoint("/db/:index") and this function checks whether the db has an element at the index and send json file to the front.
             <how to run>
                 - ex): enter "localhost:3000/db/15
+            <resources> : https://www.w3schools.com/nodejs/nodejs_mongodb_find.asp
     Post : 
         In order to either add or retrieve the data with an user input parameter,
         I created an input field and the "Post" button in the frontend. Then in the backend, I created a post method("/db") which queries the db with the entered city name and add if the city doesn't exist in the db.
@@ -24,11 +26,14 @@ Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which con
             <how did I solve?>
                 - 1. "https://www.mongodb.com/docs/manual/reference/method/db.collection.countDocuments/#client-disconnection" helped me figure out how to count the db collection size.
         As instructed, post doesn't return anything at "db/:index".
-    Put : 
+    Put/Delete : 
         Put function in the backend seems to correctly handle updating documents.
+        As I pass in the number for the index, it could correctly search a specified city from the array "usCities".
+        <Later, I just decided to search from the collection by the number instead of name>.
+            
         As of now, it updates the document's cityname and temperature to the arbitrary values.
-    Delete : 
-        Incomplete for now
+        Resourece : https://stackoverflow.com/questions/18601922/using-the-put-method-with-express-js
+            https://www.w3schools.com/nodejs/nodejs_mongodb_delete.asp
     
 #### <pt.3>: a new angular component
     For the newly created features of the web, I created new component named "database", which handles all the forms for passing action to the backend http calls().
@@ -38,5 +43,12 @@ Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which con
         - 3. Put/Delete => incomplete
             - <where did I get stuck?>
                 - 1. I've been struggling figuring out how to add an user input(index) to the endpoint("db/:index")
-                - 2. Since both Put and Delete is not available to be passed as a form action from the frontend, I tried to make it work with javascript implement, but I ended up not getting it correctly.
-    
+                - 2. Since both Put and Delete is not available to be passed as a form action from the frontend, I tried to make it work with javascript implement, but I ended up not getting it correctly. 
+        The javascript snippet line I tried : 
+        ```
+            <script type="text/javascript">
+        document.querySelector('form').onsubmit = function () {
+        this.setAttribute('action', "/db/" + document.querySelector('input[name=city_get]').value);}
+</script>
+        ```
+Resources for connecting endpoint router: https://expressjs.com/en/guide/routing.html#route-parameters/json
