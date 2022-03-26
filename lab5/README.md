@@ -4,7 +4,7 @@ Name  : Paul Jang
 ## Description: 
 #### <pt.1> : 
     In order to preload the database: <br/>
-Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which contains more than 100 US cities.<br/> I first tried to insert  each city's weather data using a for loop which loops over the array, and makes a "request" call everytime.<br/> But since the for loop didn't wait until it makes a request call for the index of the  city,<br/> I just decided to manually preload the data from the index of 0 to 99.<br/> Now in the db,  there are 100 different US cities' weather data loaded.<br/>
+Lab5-<WeatherData> collections<lab5Weather>, I first created an array, which contains more than 100 US cities.<br/> I first tried to insert  each city's weather data using a for loop which loops over the array, and makes a "request" call everytime.<br/> But since the for loop didn't wait until it makes a request call for the index of the  city,<br/> I just decided to manually preload the data from the index of 0 to 99.<br/> Now in the db,  there are 100 different US cities' weather data loaded.<br/> I brought the city list from "https://gist.github.com/norcal82/42440bd06a67eb7d9616".
 #### <pt.2> :
     Get : 
         1) For getting all the documents existing in the db collection, I created a form that operates an action to the endpoint("/db"). This call successfully runs a get function from the backend. 
