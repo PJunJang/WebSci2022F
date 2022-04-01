@@ -1,7 +1,7 @@
 TITLE : <LAB6>
 Name  : Paul Jang
 
-Description: 
+## Description: 
     <pt.1> : In order to preload the database: Lab6-<WeatherData> collections<lab6>,
     I first created an array, which contains more than 400 (US+UK) cities. I first tried to insert each city's weather data using a for loop which loops over the array, and makes a "request" call everytime. Which I've had a problem from the lab5 and now I fixed the problem by wrapping a whole connection part by for loop so that the system attempts to connect to db everytime it increments(move to the next city in the citylist).
     Now the db has more than 400 data from each different APIs: </br>
