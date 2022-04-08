@@ -27,3 +27,6 @@ I wrote a simple range division function countNum().
 2. https://angular.io/guide/observables
 3. https://blog.logrocket.com/data-visualization-angular-d3/
 
+## ZAP_REPORT:
+  folder in the zipped file under d3
+
